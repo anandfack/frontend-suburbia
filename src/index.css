@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black font-primary text-white text-base leading-relaxed;
+  }
+  .section {
+    @apply py-[50px] lg:py-[150px];
+  }
+  .title {
+    @apply text-2xl lg:text-[40px] leading-tight font-semibold mb-4;
+  }
+  .subtitle {
+    @apply text-[18px] lg:text-[20px] leading-relaxed mb-5 lg:mb-9;
+  }
+  .hero-font {
+    @apply font-secondary
+  }
+  .noto-sans {
+    @apply font-accent
+  }
+/*   .border-gradient {
+    @apply background: linear-gradient(135deg, rgba(39, 39, 39, 0.37) 0%, rgba(39, 39, 39, 0.00) 100%);
+  }
+ */}

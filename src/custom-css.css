@@ -1,0 +1,6 @@
+.border-gradient {
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(39, 39, 39, 0.37) 0%, rgba(39, 39, 39, 0.00) 100%);
+    backdrop-filter: blur(15px);
+    z-index: 10;
+}
