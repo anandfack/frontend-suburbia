@@ -1,30 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-// import axios
-import axios from "../configs/axios";
+import { useData } from "../context/LandingContext";
 
 const RecentShow = () => {
-  const [recentShow, setRecentShow] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const baseUrl = process.env.REACT_APP_BASEURL;
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/landing-page");
-        const recentShowData = response.data[0].payload.data.recentShow;
-        setRecentShow(recentShowData);
-
-        setLoading(false);
-      } catch (error) {
-        console.log(error.message);
-
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+  const { loading, recentShow, baseUrl } = useData();
 
   return (
     <section className="bg-recentshow bg-no-repeat bg-cover lg:h-[743.74px] lg:mb-[157.76px]">

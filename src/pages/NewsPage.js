@@ -2,6 +2,7 @@
 import Header from "../components/Header";
 import BreadCrumb from "../components/Breadcrumb"
 import HeadlineNews from "../components/HeadlineNews";
+import AllNews from "../components/AllNews";
 
 const NewsPage = () => {
   return (
@@ -9,6 +10,7 @@ const NewsPage = () => {
       <Header/>
       <BreadCrumb />
       <HeadlineNews />
+      <AllNews />
     </div>
   );
 };

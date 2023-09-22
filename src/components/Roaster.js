@@ -1,29 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-// import axios
-import axios from "../configs/axios";
+import { Link } from "react-router-dom";
+
+import { useData } from "../context/LandingContext";
 
 const Roaster = () => {
-  const [roaster, setRoaster] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const baseUrl = process.env.REACT_APP_BASEURL;
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/landing-page");
-        const roasterData = response.data[0].payload.data.roaster;
-
-        setRoaster(roasterData);
-        setLoading(false);
-      } catch (error) {
-        console.log(error.message);
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+  const { roaster, loading, baseUrl } = useData();
 
   return (
     <section className="lg:mx-[128px] lg:mb-[150px]">
@@ -67,12 +49,20 @@ const Roaster = () => {
                       {roaster.genre}, {roaster.city}
                     </h1>
                     <div className="flex flex-row gap-[10px] py-[10px]">
-                      <button className="bg-secondary border-black text-primary px-[15px] py-[7px] rounded-[7px]">
+                      <Link
+                        to={`${roaster.spotify}`}
+                        className="bg-secondary border-black text-primary px-[15px] py-[7px] rounded-[7px]"
+                        target="_blank"
+                      >
                         Stream
-                      </button>
-                      <button className="text-white px-[15px] py-[7px] rounded-[7px] border border-white">
+                      </Link>
+                      <Link
+                        to={`${roaster.instagram}`}
+                        className="text-white px-[15px] py-[7px] rounded-[7px] border border-white"
+                        target="_blank"
+                      >
                         Follow
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

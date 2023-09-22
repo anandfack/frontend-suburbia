@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+
+import { useData } from "../context/LandingContext";
 
 // import swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,31 +14,8 @@ import "../slider.css";
 // import required modules
 import { Navigation } from "swiper";
 
-import axios from "../configs/axios";
-
 const NewsSlider = () => {
-  const [exploreNews, setExploreNews] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const baseUrl = process.env.REACT_APP_BASEURL;
-
-  const { format } = require("date-fns");
-  const { id } = require("date-fns/locale");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/landing-page");
-        const exploreNewsData = response.data[0].payload.data.exploreNews;
-        setExploreNews(exploreNewsData);
-        setLoading(false);
-      } catch (error) {
-        console.log(error.message);
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+  const { loading, exploreNews, format, endGB, baseUrl } = useData();
 
   return (
     <Swiper
@@ -72,7 +51,7 @@ const NewsSlider = () => {
         exploreNews.map((news, index) => {
           const newsDate = new Date(news.date);
           const formattedDate = format(newsDate, "dd MMMM yyyy", {
-            locale: id,
+            locale: endGB,
           });
           return (
             <SwiperSlide key={index}>

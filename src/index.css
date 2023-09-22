@@ -16,12 +16,17 @@
     @apply text-[18px] lg:text-[20px] leading-relaxed mb-5 lg:mb-9;
   }
   .hero-font {
-    @apply font-secondary
+    @apply font-secondary;
   }
   .noto-sans {
-    @apply font-accent
+    @apply font-accent;
   }
-/*   .border-gradient {
-    @apply background: linear-gradient(135deg, rgba(39, 39, 39, 0.37) 0%, rgba(39, 39, 39, 0.00) 100%);
+  .bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
   }
- */}
+}
