@@ -21,7 +21,7 @@ const NewsSlider = () => {
     <Swiper
       modules={[Navigation]}
       navigation={true}
-      className="productSlider"
+      className="productSlider flex justify-between w-auto"
       grabCursor={true}
       breakpoints={{
         320: {
@@ -29,12 +29,12 @@ const NewsSlider = () => {
           spaceBetween: 18,
         },
         768: {
-          slidesPerView: 3,
-          spaceBetween: 20,
+          slidesPerView: 4,
+          spaceBetween: 32,
         },
         1440: {
-          slidesPerView: 3,
-          spaceBetween: 57,
+          slidesPerView: 4,
+          spaceBetween: 32,
         },
       }}
     >
@@ -55,22 +55,22 @@ const NewsSlider = () => {
           });
           return (
             <SwiperSlide key={index}>
-              <div className="bg-card lg:rounded-3xl lg:w-[373px] lg:h-[556px]">
+              <div className="bg-card lg:rounded-[15px] lg:w-[241px] lg:h-[370px]">
                 <img
-                  className="mb-[25.5px] lg:rounded-t-3xl"
+                  className="mb-[6px] lg:w-[250px] lg:h-[240px] lg:object-cover lg:rounded-t-[15px]"
                   src={`${baseUrl}/${news.imageUrl}`}
                   alt=""
                 />
-                <div className="mx-[25px] mb-[17px]">
-                  <p className="lg:mb-[7px] text-noto-sans opacity-50 lg:text-[14px] lg:font-reguler">
+                <div className="mx-[18px] mb-[5px]">
+                  <p className="lg:mb-[7px] text-noto-sans opacity-50 lg:text-[8px] lg:font-reguler">
                     {formattedDate}
                   </p>
-                  <h1 className="lg:text-[22px] lg:leading-[33px] lg:font-semibold lg:w-[202px]">
+                  <h1 className="lg:text-[15px] lg:leading-normal lg:font-semibold lg:w-[202px]">
                     {news.title}
                   </h1>
                 </div>
-                <div className="mx-[25px]">
-                  <button className="text-[17px] leading-[25.5px] lg:px-[20px] lg:py-[10px] border-[2px] rounded-[12px]">
+                <div className="mx-[18px]">
+                  <button className="text-[10px] leading-normal lg:px-[10px] lg:py-[6px] border rounded-[5px]">
                     Read News
                   </button>
                 </div>

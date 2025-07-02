@@ -1,15 +1,15 @@
 import React from "react";
 
 import BreadCrumb from "../components/Breadcrumb";
-import DetailNews from "../components/DetailNews";
+import DetailShow from "../components/DetailShow";
 
-const DetailsPage = () => {
+const DetailsShowPage = () => {
   return (
     <div>
       <BreadCrumb />
-      <DetailNews />
+      <DetailShow />
     </div>
   );
 };
 
-export default DetailsPage;
+export default DetailsShowPage;

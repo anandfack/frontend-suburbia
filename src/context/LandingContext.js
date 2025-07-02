@@ -33,8 +33,6 @@ export const LandingProvider = ({ children }) => {
       setRecentShow(data.recentShow);
       setMerchandise(data.merchandise);
 
-      // console.log(data.merchandise);
-
       setError(null);
     } catch (error) {
       setError(error);

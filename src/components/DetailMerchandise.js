@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 import axios from "../configs/axios";
 
-import { FaCartPlus } from "react-icons/fa";
+// import { FaCartPlus } from "react-icons/fa";
 
 import { Popover, Transition } from "@headlessui/react";
 
@@ -63,14 +63,14 @@ const DetailMerchandise = () => {
   }, [id, setDetailMerchandise, setRecommendMerchandise]);
 
   return (
-    <section className="mx-[128px]">
-      <h1 className="lg:text-[40px] lg:leading-[60px] lg:font-bold lg:mb-[50px]">
+    <section className="md:mx-[190px]">
+      <h1 className="md:text-[24px] md:leading-[22.77px] md:font-bold md:mb-[25px]">
         Official Merchandise From Suburbia
       </h1>
       <div className="flex flex-row gap-[32px] lg:mb-[100px]">
         <div>
           {isImagePreviewOpen ? (
-            <div className="lg:w-[576px] lg:h-[576px] lg:rounded-[20px] overflow-hidden cursor-crosshair">
+            <div className="md:w-[329px] md:h-[329px] md:rounded-[10px] overflow-hidden cursor-crosshair">
               <img
                 className="object-cover"
                 src={previewImage}
@@ -92,7 +92,7 @@ const DetailMerchandise = () => {
                 detailMerchandise.imageMerchandises
                   .filter((image) => image.isDefault === true)
                   .map((defaultImage) => (
-                    <div className="lg:w-[576px] lg:h-[576px] lg:rounded-[20px] overflow-hidden cursor-crosshair">
+                    <div className="md:w-[329px] md:h-[329px] md:rounded-[10px] overflow-hidden cursor-crosshair">
                       <img
                         className="object-cover"
                         key={defaultImage.id}
@@ -116,9 +116,9 @@ const DetailMerchandise = () => {
             {detailMerchandise &&
               detailMerchandise.imageMerchandises &&
               detailMerchandise.imageMerchandises.map((defaultImage) => (
-                <div className="lg:w-[128px] lg:h-[128px] lg:rounded-[8px] lg:mt-[30px] cursor-pointer">
+                <div className="md:w-[90px] md:h-[90px] md:mt-[15px] cursor-pointer">
                   <img
-                    className="object-cover"
+                    className="object-cover md:rounded-[5px]"
                     key={defaultImage.id}
                     src={`${baseUrl}/${defaultImage.imageUrl}`}
                     alt=""
@@ -131,32 +131,32 @@ const DetailMerchandise = () => {
           </div>
         </div>
         <div>
-          <h1 className="lg:text-[40px] lg:font-bold lg:leading-[60px] lg:w-[529px] lg:mb-[19px]">
+          <h1 className="md:text-[24px] md:font-bold md:leading-[27.77px] md:w-[395] md:mb-[20px]">
             {detailMerchandise && detailMerchandise.title}
           </h1>
-          <h1 className="lg:text-[40px] text-secondary lg:font-bold lg:leading-[60px] lg:w-[529px] lg:mb-[19px]">
+          <h1 className="md:text-[24px] text-secondary md:font-bold md:leading-[27.77px] md:w-[138px] md:mb-[20px]">
             Rp. {detailMerchandise && detailMerchandise.price}
           </h1>
-          <p className="lg:text-[20px] lg:font-medium lg:leading-[30px] lg:w-[587px] lg:mb-[30px]">
+          <p className="md:text-[8px] md:font-medium md:leading-[12px] md:w-[412px] md:mb-[22px]">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it.
           </p>
-          <h1 className="lg:text-[32px] lg:font-bold lg:leading-[48px] lg:w-[121px] lg:mb-[20px]">
-            Ukuran
+          <h1 className="md:text-[15px] md:leading-[17.35px] md:w-[102px] md:mb-[9px]">
+            Size Available
           </h1>
-          <div className="flex flex-row gap-[10px] mb-[37px]">
-            <p className="lg:text-[40px] lg:leading-[60px] lg:border-[2px] lg:rounded-[10px] px-[22px] py-[5px]">
+          <div className="flex flex-row md:gap-[10px] md:mb-[14px]">
+            <p className="md:text-[15px] md:leading-[17.35px] md:border-[2px] md:rounded-[5px] px-[10px] py-[5px]">
               S
             </p>
-            <p className="lg:text-[40px] lg:leading-[60px] lg:border-[2px] lg:rounded-[10px] px-[22px] py-[5px]">
+            <p className="md:text-[15px] md:leading-[17.35px] md:border-[2px] md:rounded-[5px] px-[10px] py-[5px]">
               M
             </p>
-            <p className="lg:text-[40px] lg:leading-[60px] lg:border-[2px] lg:rounded-[10px] px-[22px] py-[5px]">
+            <p className="md:text-[15px] md:leading-[17.35px] md:border-[2px] md:rounded-[5px] px-[10px] py-[5px]">
               L
             </p>
-            <p className="lg:text-[40px] lg:leading-[60px] lg:border-[2px] lg:rounded-[10px] px-[22px] py-[5px]">
+            <p className="md:text-[15px] md:leading-[17.35px] md:border-[2px] md:rounded-[5px] px-[10px] py-[5px]">
               XL
             </p>
           </div>
@@ -164,9 +164,9 @@ const DetailMerchandise = () => {
             <Popover className="flex flex-col gap-[15px] items-center">
               {({ open }) => (
                 /* Use the `open` state to conditionally change the direction of the chevron icon. */
-                <>
-                  <Popover.Button className="lg:text-[30px] lg:leading-[45px] lg:font-semibold bg-secondary text-black lg:px-[15px] lg:py-[7px] flex flex-row items-center gap-[15px] rounded-[7px]">
-                    <FaCartPlus />
+                <div className="md:flex md:gap-[10px]">
+                  <Popover.Button className="md:text-[10px] md:leading-[15px] md:font-semibold bg-secondary text-black md:px-[10px] md:py-[6px] flex flex-row items-center gap-[15px] rounded-[7px]">
+                    {/* <FaCartPlus /> */}
                     Buy Now
                   </Popover.Button>
                   <Transition
@@ -200,35 +200,36 @@ const DetailMerchandise = () => {
                       </Link>
                     </Popover.Panel>
                   </Transition>
-                </>
+                  <button className="md:px-[10px] md:py-[6px] md:border-[1px] md:rounded-[5px] md:text-[10px] md:leading-[15px]">Contact Admin</button>
+                </div>
               )}
             </Popover>
           </div>
         </div>
         <div></div>
       </div>
-      <div>
-        <h1 className="lg:text-[40px] lg:font-bold lg:leading-[60px] lg:mb-[50px] text-center">
+      <div className="md:mb-[150px]">
+        <h1 className="md:text-[24px] md:font-bold md:leading-[27.77px] md:mb-[24px]">
           Merch Lainnya
         </h1>
         <div className="flex flex-row gap-[32px]">
           {recommendMerchandise &&
             recommendMerchandise.map((item, index) => {
               return (
-                <Link to={`/merchandise/${item.id}`} key={index}>
+                <Link to={`/merchandise/${item.slug}`} key={index}>
                   {item.imageMerchandises &&
                     item.imageMerchandises.map((image) => (
                       <img
-                        className="lg:w-[272px] lg:h-[272px] object-cover lg:rounded-[10px] lg:mb-[16px]"
+                        className="md:w-[241px] md:h-[241px] object-cover md:rounded-[10px] md:mb-[10px]"
                         key={image.id}
                         src={`${baseUrl}/${image.imageUrl}`}
                         alt=""
                       />
                     ))}
-                  <p className="lg:text-[26px] lg:font-medium lg:leading-[39px] lg:mb-0">
+                  <p className="md:text-[15px] md:font-semibold md:leading-[22.5px] md:mb-0">
                     {item.title}
                   </p>
-                  <p className="lg:text-[26px] lg:leading-[39px] lg:font-semibold">
+                  <p className="md:text-[15px] md:leading-[22.5px] md:font-medium text-secondary">
                     Rp. {item.price}
                   </p>
                 </Link>

@@ -15,7 +15,7 @@ const AllNews = () => {
       {allNews.map((item, index) => {
         return (
           <Link
-            to={`/news/${item.id}`}
+            to={`/news/${item.slug}`}
             key={index}
             className="flex gap-[54px] lg:mb-[50px] lg:pb-[50px] items-center border-b-[1px] lg:w-[760px] hover:cursor-pointer"
           >

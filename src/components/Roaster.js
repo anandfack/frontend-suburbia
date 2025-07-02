@@ -8,17 +8,17 @@ const Roaster = () => {
   const { roaster, loading, baseUrl } = useData();
 
   return (
-    <section className="lg:mx-[128px] lg:mb-[150px]">
-      <div className="lg:mb-[56.5px]">
-        <h1 className="text-secondary lg:text-[22px] lg:font-normal lg:leading-[33px] text-center lg:mb-4">
+    <section className="lg:mx-[190px] lg:mb-[100px]">
+      <div className="lg:mb-[30px]">
+        <h1 className="text-secondary lg:text-[14px] lg:font-medium lg:leading-normal text-center lg:mb-[10px]">
           Roaster
         </h1>
-        <h1 className="text-white font-secondary text-center lg:font-semibold lg:text-[44px] lg:leading-[50.908px]">
+        <h1 className="text-white text-center lg:font-bold lg:text-[24px] lg:leading-[28px]">
           Roaster of Suburbia
         </h1>
       </div>
 
-      <div className="flex gap-7 flex-wrap lg:w-[1300px] w-auto">
+      <div className="flex gap-7 flex-wrap w-auto">
         {loading ? (
           <div
             class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
@@ -32,33 +32,33 @@ const Roaster = () => {
           roaster.map((roaster, index) => {
             return (
               <div
-                className="lg:w-[378px] bg-card lg:rounded-[20px] lg:h-[127px]"
+                className="lg:w-[332px] bg-card lg:rounded-[10px] lg:h-[117px]"
                 key={index}
               >
-                <div className="flex">
+                <div className="flex flex-row items-center mt-[17px]">
                   <img
-                    className=" ml-[20px] my-[13.5px] w-[100px] h-[100px] rounded-[7px]"
+                    className=" ml-[22px] w-[83px] h-[83px] rounded-[7px]"
                     src={`${baseUrl}/${roaster.imageUrl}`}
                     alt=""
                   />
-                  <div className="ml-[15px] mt-[17.5px]">
-                    <h1 className="font-secondary text-white text-[22px] leading-[25.45px] font-semibold mb-0">
+                  <div className="ml-[15px]">
+                    <h1 className="font-secondary text-white text-[18px] leading-[21px] font-semibold mb-0">
                       {roaster.nameBand}
                     </h1>
-                    <h1 className="text-[12px]">
+                    <h1 className="text-[14px] lg:font-normal lg:leading-[16px] lg:mb-[10px]">
                       {roaster.genre}, {roaster.city}
                     </h1>
-                    <div className="flex flex-row gap-[10px] py-[10px]">
+                    <div className="flex flex-row gap-[10px]">
                       <Link
                         to={`${roaster.spotify}`}
-                        className="bg-secondary border-black text-primary px-[15px] py-[7px] rounded-[7px]"
+                        className="bg-secondary border-black text-primary lg:text-[10px] lg:leading-normal lg:font-medium px-[7px] py-[5px] rounded-[5px]"
                         target="_blank"
                       >
                         Stream
                       </Link>
                       <Link
                         to={`${roaster.instagram}`}
-                        className="text-white px-[15px] py-[7px] rounded-[7px] border border-white"
+                        className="text-white px-[7px] py-[5px] lg:text-[10px] lg:leading-normal lg:font-medium rounded-[5px] border border-white"
                         target="_blank"
                       >
                         Follow

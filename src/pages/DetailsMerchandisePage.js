@@ -6,8 +6,7 @@ import DetailMerchandise from "../components/DetailMerchandise";
 
 const DetailsMerchandisePage = () => {
   return (
-    <div className="max-w-[1440px] w-full">
-      <Header />
+    <div>
       <BreadCrumb />
       <DetailMerchandise />
     </div>

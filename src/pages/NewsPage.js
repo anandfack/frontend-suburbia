@@ -1,16 +1,17 @@
 // import components
-import Header from "../components/Header";
-import BreadCrumb from "../components/Breadcrumb"
+import BreadCrumb from "../components/Breadcrumb";
+import EditorPicks from "../components/EditorPicks";
 import HeadlineNews from "../components/HeadlineNews";
-import AllNews from "../components/AllNews";
+import HotNews from "../components/HotNews";
+// import AllNews from "../components/AllNews";
 
 const NewsPage = () => {
   return (
-    <div className="max-w-[1440px] w-full">
-      <Header/>
+    <div>
       <BreadCrumb />
       <HeadlineNews />
-      <AllNews />
+      <EditorPicks />
+      <HotNews />
     </div>
   );
 };
