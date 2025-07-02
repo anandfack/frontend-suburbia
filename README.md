@@ -1,3 +1,3 @@
 # frontend-suburbia
 
-jalankan aplikasi menggunakan "npm start"
+jalankan aplikasi menggunakan perintah "npm start"
